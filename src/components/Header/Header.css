@@ -1,0 +1,58 @@
+h1{
+    color:white;
+    font-size: 48px;
+}
+
+img{
+    margin: 0 10px;
+}
+
+#selects{
+    margin-left: 10%;
+    display: flex;
+    align-items: center;
+}
+
+.form-select{
+    border-radius: 20px;
+    background-color: transparent;
+    border-color: #b3b3b3;
+    height: 48px;
+    width: 8rem;
+    text-align: center;
+    font-size: 1.5rem;
+    color: #b3b3b3;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.form-select:hover{
+    background-color: #4a4a4a;
+}
+  
+  .form-select::-ms-expand {
+    display: none;
+  }
+  
+  .form-select::after {
+    content: '\25BC'; /* Unicode character for down arrow */
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    pointer-events: none;
+  }
+  
+  /* Style when select is open */
+  .form-select.select-open::after {
+    transform: translateY(-50%) rotate(180deg);
+  }
+
+#header{
+    display: flex;
+    padding:20px 0;
+    border-bottom:2px gray solid;
+    border-width: 4px;
+    
+}
