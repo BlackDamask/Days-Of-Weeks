@@ -5,20 +5,35 @@ import MonthYearContentPage from './components/ContentPages/MonthYear/MonthYearC
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import {useState} from 'react';
 
 function App() {
 
+  const [contentType, setContentType] = useState('monthYear');
+
+  const ChoseContentPage = () =>{
+    let content;
+    switch (contentType){
+      case 'monthYear':
+        content = (<MonthYearContentPage></MonthYearContentPage>);
+        break;
+      case 'weekYear':
+        content = (<WeekYearContentPage></WeekYearContentPage>);
+        break;
+    }
+    return content;
+  }
+
   return (
       <Container fluid>
-      
         <Row>
           <Col  md = {{ span: 8, offset: 2 }}>
-              <Header></Header>
+              <Header setContentType = {setContentType}></Header>
             </Col>
         </Row>
         <Row>
           <Col md = {{ span: 8, offset: 2 }}>
-            <MonthYearContentPage></MonthYearContentPage>
+            {ChoseContentPage()}
           </Col>
         </Row>
       </Container>

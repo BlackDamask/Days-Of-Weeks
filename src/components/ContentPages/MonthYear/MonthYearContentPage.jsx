@@ -1,24 +1,19 @@
 import Square from '../../square/Square.jsx';
 import '../ContentPage.css';
 import HintArrow from '../../../assets/hint_arrow.png'
-import {getSquares, setSquareColor, fillToSquare} from './monthYearData.js';
+import {getSquares, fillToSquare} from './monthYearData.js';
+import {ShowHintYear, setSquareColor} from '../contentPagefunctions.jsx'
 
 export default function MonthYearContentPage(){
-    let squares = getSquares();
-    console.log(squares);
-    squares = fillToSquare(16,40,'#38a9ff');
-    console.log(squares);
-    const ShowHintYear = (rowIndex) =>{
-        const year = rowIndex +1;
-        let answer = <p></p>; 
-        if(year % 5 == 0 && year != 5){
-            answer = <p>{year}</p>;
-        }
-        else if (year == 5){
-            answer = <p>5</p>;
-        }
-        return answer;
+    const liStyle = {
+        margin: '0 0 18px 0',
+        height: '40px'
     }
+
+
+    let squares = getSquares();
+
+    squares = fillToSquare(16,4,'#38a9ff');
 
     return(
         <div id = 'content-page'>
@@ -31,14 +26,14 @@ export default function MonthYearContentPage(){
                     <img src={HintArrow} alt="hint arrow" />
                 </li>
                 {squares.map((row, rowIndex) =>(
-                <li key = {rowIndex}>
-                    <ol className='row-squares'>
-                        <li key={'hintYear'+rowIndex}>
+                <li key = {rowIndex} style={liStyle}>
+                    <ol className='row-squares' style = {{gap: '18px'}}>
+                        <li key={'hintYear'+rowIndex} style={liStyle}>
                             {ShowHintYear(rowIndex)}
                         </li>
                         {row.map((color, colIndex) => (
-                            <li key={colIndex}>
-                                <Square backColor = {color} width={'16px'} height={'16px'}></Square>
+                            <li key={colIndex} style={liStyle}>
+                                <Square backColor = {color} width={'40px'} height={'40px'}></Square>
                             </li>
                         ))}
                     </ol>

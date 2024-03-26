@@ -18,11 +18,9 @@ p{
 }
 
 li{
-    height: 16px;
     margin: 2px 0;
 }
 .row-squares{
-    gap: 2px;
     display: flex;
 }
 
@@ -46,5 +44,4 @@ li{
 
 #all-squares{
     margin-top: 3rem;
-    gap: 2px;
 }

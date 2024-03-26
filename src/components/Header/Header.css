@@ -54,5 +54,5 @@ img{
     padding:20px 0;
     border-bottom:2px gray solid;
     border-width: 4px;
-    
+    justify-content: space-between;
 }
