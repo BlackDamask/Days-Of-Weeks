@@ -1,12 +1,12 @@
-import Square from './square/Square.jsx';
-import './ContentPage.css';
-import HintArrow from '../../assets/hint_arrow.png'
-import { getSquares, setSquareColor } from '../../data.js';
+import Square from '../../square/Square.jsx';
+import '../ContentPage.css';
+import HintArrow from '../../../assets/hint_arrow.png'
+import {getSquares, setSquareColor, fillToSquare} from './monthYearData.js';
 
-export default function ContentPage(){
+export default function MonthYearContentPage(){
     let squares = getSquares();
     console.log(squares);
-    squares = setSquareColor(0,0,'#ffffff');
+    squares = fillToSquare(16,40,'#38a9ff');
     console.log(squares);
     const ShowHintYear = (rowIndex) =>{
         const year = rowIndex +1;
@@ -26,7 +26,7 @@ export default function ContentPage(){
             <ol id = 'all-squares'>
                 <li id='hint' key = {'hint'}>
                     <h2>
-                        Weeks of year
+                        Months of year
                     </h2>
                     <img src={HintArrow} alt="hint arrow" />
                 </li>
@@ -38,7 +38,7 @@ export default function ContentPage(){
                         </li>
                         {row.map((color, colIndex) => (
                             <li key={colIndex}>
-                                <Square backgroundColor = {color}></Square>
+                                <Square backColor = {color} width={'16px'} height={'16px'}></Square>
                             </li>
                         ))}
                     </ol>
