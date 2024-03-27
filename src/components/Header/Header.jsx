@@ -16,7 +16,7 @@ export default function Header({setContentType}){
                 </Form.Select>
                 <img src = {Arrow}></img>
                 <Form.Select>
-                    <option>Year</option>
+                    <option>Life</option>
                 </Form.Select>
             </div>
             

@@ -1,7 +1,7 @@
 import './App.css'
 import Header from './components/Header/Header.jsx';
-import WeekYearContentPage from './components/ContentPages/WeekYear/WeekYearContentPage.jsx';
-import MonthYearContentPage from './components/ContentPages/MonthYear/MonthYearContentPage.jsx';
+import WeekLifeContentPage from './components/ContentPages/WeekLife/WeekLifeContentPage.jsx';
+import MonthLifeContentPage from './components/ContentPages/MonthLife/MonthLifeContentPage.jsx';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -9,16 +9,16 @@ import {useState} from 'react';
 
 function App() {
 
-  const [contentType, setContentType] = useState('monthYear');
+  const [contentType, setContentType] = useState('weekYear');
 
   const ChoseContentPage = () =>{
     let content;
     switch (contentType){
       case 'monthYear':
-        content = (<MonthYearContentPage></MonthYearContentPage>);
+        content = (<MonthLifeContentPage></MonthLifeContentPage>);
         break;
       case 'weekYear':
-        content = (<WeekYearContentPage></WeekYearContentPage>);
+        content = (<WeekLifeContentPage></WeekLifeContentPage>);
         break;
     }
     return content;
