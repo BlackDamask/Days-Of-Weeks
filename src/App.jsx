@@ -6,20 +6,23 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import {useState} from 'react';
+import YearLifeContentPage from './components/ContentPages/YearLife/YearLifeContentPage.jsx';
 
 function App() {
 
-  const [contentType, setContentType] = useState('weekYear');
+  const [contentType, setContentType] = useState('weekLife');
 
   const ChoseContentPage = () =>{
     let content;
     switch (contentType){
-      case 'monthYear':
+      case 'monthLife':
         content = (<MonthLifeContentPage></MonthLifeContentPage>);
         break;
-      case 'weekYear':
+      case 'weekLife':
         content = (<WeekLifeContentPage></WeekLifeContentPage>);
         break;
+      case 'yearLife':
+        content = (<YearLifeContentPage></YearLifeContentPage>)
     }
     return content;
   }

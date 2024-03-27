@@ -23,7 +23,7 @@ export default function WeekLifeContentPage(){
             <ol id = 'all-squares'>
                 <li id='hint' key = {'hint'} >
                     <h2>
-                        Weeks of year
+                        Weeks of the year
                     </h2>
                     <img src={HintArrow} alt="hint arrow" />
                 </li>

@@ -3,7 +3,7 @@ let squares = [];
 
 export function fillToSquare(row,col,color){
     for(let i = 0; i <= row-1; i ++){
-        for (let j=0; j < 12; j++){
+        for (let j=0; j < 10; j++){
             squares[i][j] = color;
         }
     }
@@ -15,9 +15,9 @@ export function fillToSquare(row,col,color){
 }
 
 export function getSquares() {
-    for (let i = 0; i < 90; i++) {
+    for (let i = 0; i <9; i++) {
         squares[i] = []; 
-        for (let j = 0; j < 12; j++) {
+        for (let j = 0; j < 10; j++) {
             squares[i][j] = '#575757';
         }
     }

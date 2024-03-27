@@ -11,8 +11,9 @@ export default function Header({setContentType}){
             </h1>
             <div id='selects'>
                 <Form.Select onChange={e => setContentType(e.target.value)}>
-                    <option value={'weekYear'}>Weeks</option>
-                    <option value={'monthYear'}>Months</option>
+                    <option value={'weekLife'}>Weeks</option>
+                    <option value={'monthLife'}>Months</option>
+                    <option value={'yearLife'}>Years</option>
                 </Form.Select>
                 <img src = {Arrow}></img>
                 <Form.Select>
